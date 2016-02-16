@@ -32,12 +32,8 @@ sudo npm install -g n
 sudo n 0.10.40
 
 
-echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
+#echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
 #sudo yum install nginx -y
-
-
-
-
 
 
 
@@ -55,7 +51,7 @@ cd ghost
 echo -e "\x1B[01;96m  Setting some permissions...   \x1B[0m"
 sudo chmod 755 /var/www
 
-echo -e "\x1B[01;96m tweaking nginx...  \x1B[0m"
+#echo -e "\x1B[01;96m tweaking nginx...  \x1B[0m"
 #sudo mkdir /etc/nginx/sites-available
 #sudo mkdir /etc/nginx/sites-enabled
 #sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
