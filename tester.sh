@@ -16,6 +16,7 @@ sudo yum install nodejs npm --enablerepo=epel
 #sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 
+
 sudo mkdir -p /var/www/
 sudo wget https://ghost.org/zip/ghost-latest.zip
 sudo unzip -d /var/www/ghost *.zip
