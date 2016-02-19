@@ -7,6 +7,7 @@ sudo yum update -y
 echo -e "\x1B[01;96m Done Installing Updates...\x1B[0m"
 
 echo -e "\x1B[01;96m Installing c++ compiler\x1B[0m"
+#sudo yum install gcc-c++ make openssl-devel git -y
 sudo yum install gcc-c++ make openssl-devel -y
 
 echo -e "\x1B[01;96m Getting Nodejs source code...\x1B[0m"
@@ -33,9 +34,8 @@ sudo unzip -d ghost *.zip
 echo -e "\x1B[01;96m Cleaning and tweaking ghost...\x1B[0m"
 sudo rm -rf *.zip
 cd ghost
-sudo chmod -R 777 /var/www/ghost
 sudo cp /home/ec2-user/ec2ghost/config.js /var/www/ghost/config.js
-
+sudo chmod -R 777 /var/www/ghost
 
 echo -e "\x1B[01;96m Installing npm's production dependencies... \x1B[0m"
 sudo npm install --production
