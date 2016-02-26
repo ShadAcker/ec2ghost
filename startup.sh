@@ -7,6 +7,7 @@ sudo yum update -y
 echo -e "\x1B[01;96m Done Installing Updates...\x1B[0m"
 
 echo -e "\x1B[01;96m Installing c++ compiler\x1B[0m"
+#sudo yum install git -y
 #sudo yum install gcc-c++ make openssl-devel git -y
 sudo yum install gcc-c++ make openssl-devel -y
 
