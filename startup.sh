@@ -14,7 +14,7 @@ sudo yum install gcc-c++ make openssl-devel -y
 echo -e "\x1B[01;96m Getting Nodejs source code...\x1B[0m"
 git clone git://github.com/joyent/node.git
 cd node
-echo -e "\x1B[01;96m Looking for our supported version...\x1B[0m"
+echo -e "\x1B[01;96m getting our supported version...\x1B[0m"
 sudo git checkout v0.10.40
 ./configure
 echo -e "\x1B[01;96m Compiling our code...\x1B[0m"
@@ -41,12 +41,12 @@ sudo chmod -R 777 /var/www/ghost
 echo -e "\x1B[01;96m Installing npm's production dependencies... \x1B[0m"
 sudo npm install --production
 
-#echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
+echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
 sudo yum install nginx -y
 
-sudo mkdir /etc/nginx/sites-available
-sudo mkdir /etc/nginx/sites-enabled
-sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/sites-enabled/ghost.conf
+#sudo mkdir /etc/nginx/sites-available
+#sudo mkdir /etc/nginx/sites-enabled
+#sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 #sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 
 echo -e "\x1B[01;96m Starting npm...\x1B[0m"
