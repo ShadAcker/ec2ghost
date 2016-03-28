@@ -44,13 +44,27 @@ sudo npm install --production
 echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
 sudo yum install nginx -y
 
+### need to add a line to edit servername for ghost.conf
+#
+# can i do this dynamically???
+#
+# same for the config file in the /var/www/ghost/config.js
+###
+
+echo -e "\x1B[01;96m Tweaking NGINX...\x1B[0m"
+sudo rm -r /etc/nginx/conf.d/virtual.conf
+
+sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
+
 #sudo mkdir /etc/nginx/sites-available
 #sudo mkdir /etc/nginx/sites-enabled
 #sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 #sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 
+echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
+sudo service nginx start
+
 #echo -e "\x1B[01;96m Starting npm...\x1B[0m"
 #npm start --production
 
 
-echo echo -e "\x1B[01;96m  End of Awesomness!   \x1B[0m"
