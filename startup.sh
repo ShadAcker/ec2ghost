@@ -49,8 +49,8 @@ sudo yum install nginx -y
 #sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 #sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 
-echo -e "\x1B[01;96m Starting npm...\x1B[0m"
-npm start --production
+#echo -e "\x1B[01;96m Starting npm...\x1B[0m"
+#npm start --production
 
 
 echo echo -e "\x1B[01;96m  End of Awesomness!   \x1B[0m"
