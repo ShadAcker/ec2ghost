@@ -1,6 +1,12 @@
 #!/bin/bash
 #echo -e "\x1B[01;96m  foo   \x1B[0m"
 
+echo -e "\x1B[01;96m Enter your IP or Site's URL (e.g. www.myblog.com):   \x1B[0m" 
+read site
+sed  -i -e 's/XXX/$site/g' ghost.conf
+sed  -i -e 's/XXX/$site/g' config.js
+
+
 echo -e "\x1B[01;96m Starting Script...\x1B[0m"
 echo -e "\x1B[01;96m Getting & Installing Updates... \x1B[0m"
 sudo yum update -y
@@ -42,22 +48,12 @@ sudo npm install --production
 echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
 sudo yum install nginx -y
 
-### need to add a line to edit servername for ghost.conf
-#
-# can i do this dynamically???
-#
-# same for the config file in the /var/www/ghost/config.js
-###
 
 echo -e "\x1B[01;96m Tweaking NGINX...\x1B[0m"
 sudo rm -r /etc/nginx/conf.d/virtual.conf
 
 sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 
-#sudo mkdir /etc/nginx/sites-available
-#sudo mkdir /etc/nginx/sites-enabled
-#sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/sites-enabled/ghost.conf
-#sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
 
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
