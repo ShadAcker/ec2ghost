@@ -6,3 +6,4 @@ read site
 sed  -i -e 's/XXX/$site/g' ghost.conf
 sed  -i -e 's/XXX/$site/g' config.js
 
+echo using this string $site
