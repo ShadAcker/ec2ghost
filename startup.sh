@@ -57,6 +57,7 @@ sudo rm -r /etc/nginx/conf.d/virtual.conf
 
 sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 
+#chkconfig nginx on
 
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
