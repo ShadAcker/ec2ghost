@@ -6,7 +6,8 @@ read site
 sed  -i -e "s/XXX/${site}/g" ghost.conf
 sed  -i -e "s/XXX/${site}/g" config.js
 
-
+echo "Site is set to : $site"
+<<COMMENT
 echo -e "\x1B[01;96m Starting Script...\x1B[0m"
 echo -e "\x1B[01;96m Getting & Installing Updates... \x1B[0m"
 sudo yum update -y
@@ -62,3 +63,4 @@ sudo service nginx start
 #npm start --production
 
 
+COMMENT
