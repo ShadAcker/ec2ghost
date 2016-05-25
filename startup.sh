@@ -9,7 +9,7 @@ sed  -i -e "s/XXX/${site}/g" config.js
 echo "Site is set to : $site"
 
 
-<<COMMENT
+#<<COMMENT
 echo -e "\x1B[01;96m Starting Script...\x1B[0m"
 echo -e "\x1B[01;96m Getting & Installing Updates... \x1B[0m"
 sudo yum update -y
@@ -61,8 +61,8 @@ sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
 
-#echo -e "\x1B[01;96m Starting npm...\x1B[0m"
-#npm start --production
+echo -e "\x1B[01;96m Starting npm...\x1B[0m"
+npm start --production
 
 
-COMMENT
+#COMMENT
