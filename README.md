@@ -15,5 +15,6 @@ Simply ssh into your vanilla/base instance and run the following commands
 6. When prompted enter either the external IP of your EC2 instance *(this is great for testing & validating)*; or the name of your site *(e.g. www.myblog.com)* 
 7. Let this script do all the work<br><br>Enjoy!!  =)
 
-
+Thanks!<br>
+Shad Acker
 
