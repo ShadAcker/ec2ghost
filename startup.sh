@@ -9,6 +9,9 @@ sed  -i -e "s/XXX/${site}/g" config.js
 echo "Site is set to : $site"
 
 
+echo -e "\x1B[01;96m Enter a Username to run Ghost as:   \x1B[0m" 
+read ghostname
+
 #<<COMMENT
 echo -e "\x1B[01;96m Starting Script...\x1B[0m"
 echo -e "\x1B[01;96m Getting & Installing Updates... \x1B[0m"
@@ -43,7 +46,9 @@ echo -e "\x1B[01;96m Cleaning and tweaking ghost...\x1B[0m"
 sudo rm -rf *.zip
 cd ghost
 sudo cp /home/ec2-user/ec2ghost/config.js /var/www/ghost/config.js
-sudo chmod -R 777 /var/www/ghost
+
+#i don't thik this is very "safe" sooo... lets try this
+#sudo chmod -R 777 /var/www/ghost
 
 echo -e "\x1B[01;96m Installing npm's production dependencies... \x1B[0m"
 sudo npm install --production
@@ -57,7 +62,7 @@ sudo rm -r /etc/nginx/conf.d/virtual.conf
 
 sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 
-#chkconfig nginx on
+chkconfig nginx on
 
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
