@@ -8,4 +8,4 @@ read ghostpass
 
 
 sudo useradd $ghostname
-sudo passwd $ghostpass
+sudo passwd $ghostname
