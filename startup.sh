@@ -65,9 +65,10 @@ sudo yum install nginx -y
 echo -e "\x1B[01;96m Tweaking NGINX...\x1B[0m"
 sudo rm -r /etc/nginx/conf.d/virtual.conf
 
-sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 
-sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
+#trying to get it to run as a service... this init script is apparently for ubuntu
+#sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
+#sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
 
 
 sudo chkconfig nginx on
