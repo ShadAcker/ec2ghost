@@ -9,11 +9,11 @@ sed  -i -e "s/XXX/${site}/g" config.js
 echo "Site is set to : $site"
 
 
-echo -e "\x1B[01;96m Enter a Username to run your blog as:   \x1B[0m" 
-read ghostname
+#echo -e "\x1B[01;96m Enter a Username to run your blog as:   \x1B[0m" 
+#read ghostname
 
-sudo useradd $ghostname
-sudo passwd $ghostname
+#sudo useradd $ghostname
+#sudo passwd $ghostname
 
 
 #<<COMMENT
