@@ -51,10 +51,6 @@ sudo rm -rf *.zip
 cd ghost
 sudo cp /home/ec2-user/ec2ghost/config.js /var/www/ghost/config.js
 
-#i don't thik this is very "safe" sooo... lets try kill this for now
-#sudo chmod -R 777 /var/www/ghost
-
-
 echo -e "\x1B[01;96m Installing npm's production dependencies... \x1B[0m"
 sudo npm install --production
 
@@ -64,19 +60,21 @@ sudo yum install nginx -y
 
 echo -e "\x1B[01;96m Tweaking NGINX...\x1B[0m"
 sudo rm -r /etc/nginx/conf.d/virtual.conf
-
-
-#trying to get it to run as a service... this init script is apparently for ubuntu
-#sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
-#sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
-
-
+sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
 sudo chkconfig nginx on
-
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
 
-echo -e "\x1B[01;96m Almost Done!\x1B[0m"
+
+echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
+#i don't thik this is very "safe" sooo... lets try kill this for now
+#sudo chmod -R 777 /var/www/ghost
+
+
+#trying to get it to run as a service... this init script is apparently for ubuntu
+#sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
+
+
 #echo -e "\x1B[01;96m Lets just test password for and see if we have permissions correct\x1B[0m"
 #chown -R ghost:$ghostname /var/www/ghost/
 #su - ghost
