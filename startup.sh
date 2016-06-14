@@ -64,20 +64,21 @@ sudo chkconfig nginx on
 echo -e "\x1B[01;96m Starting Nginx\x1B[0m"
 sudo service nginx start
 
+#sudo useradd $ghostname
+sudo useradd -d /var/www/ghost ghost
+sudo chown ghost.ghost /var/www/ghost -R
+
 
 echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
 #i don't thik this is very "safe" sooo... lets try kill this for now
 #sudo chmod -R 777 /var/www/ghost
 
-
 #trying to get it to run as a service... 
 sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
-sudo chmod -R 755 /etc/inid.d/ghost
+#sudo chmod -R 755 /etc/inid.d/ghost
 
 
-#sudo useradd $ghostname
-sudo useradd -d /var/www/ghost ghost
-sudo chown ghost.ghost /var/www/ghost -R
+
 
 
 #sudo passwd $ghostname
