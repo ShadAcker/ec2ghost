@@ -74,8 +74,8 @@ echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
 #sudo chmod -R 777 /var/www/ghost
 
 #trying to get it to run as a service... 
-sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
-#sudo chmod -R 755 /etc/inid.d/ghost
+sudo cp /home/ec2-user/ec2ghost/ghost /etc/init.d/ghost
+sudo chmod -R 755 /etc/init.d/ghost
 
 
 
