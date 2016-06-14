@@ -31,7 +31,7 @@ echo -n $"Starting $prog: "
 export NODE_ENV=production
 cd $home
 #daemon --user=root $exec
-#daemon --user=ghost $exec
+daemon --user=ghost $exec
 retval=$?
 echo
 [ $retval -eq 0 ] && touch $lockfile
