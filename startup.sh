@@ -12,8 +12,7 @@ echo "Site is set to : $site"
 #echo -e "\x1B[01;96m Enter a Username to run your blog as:   \x1B[0m" 
 #read ghostname
 
-#sudo useradd $ghostname
-#sudo passwd $ghostname
+
 
 
 #<<COMMENT
@@ -71,9 +70,18 @@ echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
 #sudo chmod -R 777 /var/www/ghost
 
 
-#trying to get it to run as a service... this init script is apparently for ubuntu
-#sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
+#trying to get it to run as a service... 
+sudo cp /home/ec2-user/ec2ghost/ghost /etc/inid.d/ghost
+sudo chmod -R 755 /etc/inid.d/ghost
 
+
+#sudo useradd $ghostname
+sudo useradd -d /var/www/ghost ghost
+sudo chown ghost.ghost /var/www/ghost -R
+
+
+#sudo passwd $ghostname
+#sudo chmod -R 755 /var/www/ghost
 
 #echo -e "\x1B[01;96m Lets just test password for and see if we have permissions correct\x1B[0m"
 #chown -R ghost:$ghostname /var/www/ghost/
