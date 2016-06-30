@@ -42,7 +42,9 @@ echo -e "\x1B[01;96m Starting Ghost Install & Config...\x1B[0m"
 sudo mkdir -p /var/www/
 cd /var/www
 echo -e "\x1B[01;96m Getting Ghost.zip...\x1B[0m"
+#changing for testing themes
 #sudo wget https://ghost.org/zip/ghost-latest.zip
+
 sudo wget https://github.com/TryGhost/Ghost/releases/download/0.5.10/Ghost-0.5.10.zip
 
 echo -e "\x1B[01;96m Unzipping to var/www/ghost...\x1B[0m"
