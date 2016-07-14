@@ -45,6 +45,7 @@ echo -e "\x1B[01;96m Getting Ghost.zip...\x1B[0m"
 #changing for testing themes
 #sudo wget https://ghost.org/zip/ghost-latest.zip
 
+#this is the previous version for zenzero theme
 sudo wget https://github.com/TryGhost/Ghost/releases/download/0.5.10/Ghost-0.5.10.zip
 
 echo -e "\x1B[01;96m Unzipping to var/www/ghost...\x1B[0m"
@@ -81,7 +82,8 @@ echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
 sudo cp /home/ec2-user/ec2ghost/ghost /etc/init.d/ghost
 sudo chmod -R 755 /etc/init.d/ghost
 
-
+sudo chkconfig ghost on
+sudo service ghost start
 
 
 
@@ -93,8 +95,6 @@ sudo chmod -R 755 /etc/init.d/ghost
 #su - ghost
 #cd /var/www/ghost/
 
-#echo -e "\x1B[01;96m Starting npm...\x1B[0m"
-#npm start --production
 
 
 #COMMENT
