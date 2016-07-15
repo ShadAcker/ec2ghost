@@ -75,5 +75,10 @@ sudo chmod -R 755 /etc/init.d/ghost
 sudo chkconfig ghost on
 sudo service ghost start
 
+echo -e "Configuration Complete..."
+echo -e "Reboot Needed..."
+echo -e ""
+echo -e "Press Any Key to Reboot the System"
+sudo reboot -f
 
 #COMMENT
