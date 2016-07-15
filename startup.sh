@@ -9,12 +9,6 @@ sed  -i -e "s/XXX/${site}/g" config.js
 echo "Site is set to : $site"
 
 
-#echo -e "\x1B[01;96m Enter a Username to run your blog as:   \x1B[0m" 
-#read ghostname
-
-
-
-
 #<<COMMENT
 echo -e "\x1B[01;96m Starting Script...\x1B[0m"
 echo -e "\x1B[01;96m Getting & Installing Updates... \x1B[0m"
@@ -43,10 +37,10 @@ sudo mkdir -p /var/www/
 cd /var/www
 echo -e "\x1B[01;96m Getting Ghost.zip...\x1B[0m"
 #changing for testing themes
-#sudo wget https://ghost.org/zip/ghost-latest.zip
+sudo wget https://ghost.org/zip/ghost-latest.zip
 
 #this is the previous version for zenzero theme
-sudo wget https://github.com/TryGhost/Ghost/releases/download/0.5.10/Ghost-0.5.10.zip
+#sudo wget https://github.com/TryGhost/Ghost/releases/download/0.5.10/Ghost-0.5.10.zip
 
 echo -e "\x1B[01;96m Unzipping to var/www/ghost...\x1B[0m"
 sudo unzip -d ghost *.zip
@@ -61,7 +55,6 @@ sudo npm install --production
 echo -e "\x1B[01;96m Installing NGINX...\x1B[0m"
 sudo yum install nginx -y
 
-
 echo -e "\x1B[01;96m Tweaking NGINX...\x1B[0m"
 sudo rm -r /etc/nginx/conf.d/virtual.conf
 sudo cp /home/ec2-user/ec2ghost/ghost.conf /etc/nginx/conf.d/ghost.conf
@@ -73,10 +66,7 @@ sudo service nginx start
 sudo useradd -d /var/www/ghost ghost
 sudo chown ghost.ghost /var/www/ghost -R
 
-
 echo -e "\x1B[01;96m Setting up Ghost to keep running...\x1B[0m"
-#i don't thik this is very "safe" sooo... lets try kill this for now
-#sudo chmod -R 777 /var/www/ghost
 
 #trying to get it to run as a service... 
 sudo cp /home/ec2-user/ec2ghost/ghost /etc/init.d/ghost
@@ -84,17 +74,6 @@ sudo chmod -R 755 /etc/init.d/ghost
 
 sudo chkconfig ghost on
 sudo service ghost start
-
-
-
-#sudo passwd $ghostname
-#sudo chmod -R 755 /var/www/ghost
-
-#echo -e "\x1B[01;96m Lets just test password for and see if we have permissions correct\x1B[0m"
-#chown -R ghost:$ghostname /var/www/ghost/
-#su - ghost
-#cd /var/www/ghost/
-
 
 
 #COMMENT
